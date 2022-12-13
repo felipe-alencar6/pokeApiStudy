@@ -1,0 +1,86 @@
+<p>poketeam works!</p>
+<button (click)="getRandomTeam()">Get your team</button>
+<button (click)="getRandomEnemy()">Get enemy team</button>
+
+<div class="grid">
+  <div class="col-6 md:col-6 lg:col-3">
+    <p-progressSpinner
+      [style]="{ width: '50px' }"
+      *ngIf="progressSpinner"
+      strokeWidth="5"
+    ></p-progressSpinner>
+    <div
+      *ngFor="let pokemon of pokes"
+      class="border-solid flex justify-content-end align-items-center"
+    >
+      <div *ngFor="let move of pokemon.move" class="mr-5 w-9rem" style="">
+        <span
+          >{{ move[0].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[0].power || 0 }}</span
+        ><br />
+        <span
+          >{{ move[1].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[1].power || 0 }}</span
+        ><br />
+        <span
+          >{{ move[2].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[2].power || 0 }}</span
+        ><br />
+        <span
+          >{{ move[3].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[3].power || 0 }}</span
+        ><br />
+      </div>
+      <div style="text-align: end" class="w-4rem">
+        <div>{{ pokemon.name | titlecase }}</div>
+        <span>{{ pokemon.type1 | titlecase }}</span>
+        <span *ngIf="pokemon.type2">/{{ pokemon.type2 | titlecase }}</span>
+      </div>
+      <img src="{{ pokemon.img }}" alt="" />
+    </div>
+  </div>
+  <div class="col-6 md:col-6 lg:col-3">
+    <p-progressSpinner
+      [style]="{ width: '50px' }"
+      *ngIf="progressSpinner2"
+      strokeWidth="5"
+    ></p-progressSpinner>
+    <div
+      *ngFor="let pokemon of pokes2"
+      class="border-solid flex justify-content-end align-items-center"
+    >
+      <div *ngFor="let move of pokemon.move" class="mr-5 w-9rem" style="">
+        <span
+          >{{ move[0].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[0].power || 0 }}</span
+        ><br />
+        <span
+          >{{ move[1].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[1].power || 0 }}</span
+        ><br />
+        <span
+          >{{ move[2].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[2].power || 0 }}</span
+        ><br />
+        <span
+          >{{ move[3].name | titlecase }}
+          <i class="pi pi-bolt" style="font-size: 0.8rem"></i>
+          {{ move[3].power || 0 }}</span
+        ><br />
+      </div>
+      <div style="text-align: end" class="w-4rem">
+        <div>{{ pokemon.name | titlecase }}</div>
+        <span>{{ pokemon.type1 | titlecase }}</span>
+        <span *ngIf="pokemon.type2">/{{ pokemon.type2 | titlecase }}</span>
+      </div>
+      <img src="{{ pokemon.img }}" alt="" />
+    </div>
+  </div>
+</div>
